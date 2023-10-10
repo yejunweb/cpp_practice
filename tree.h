@@ -2,7 +2,7 @@
 #define _TREE_H_
  
 #include <iostream>
-using namespace std
+using namespace std;
  
 class node
 {
