@@ -45,13 +45,28 @@ void InsertBST(BSTree &T, ElemType e)
 void CreatBST(BSTree &T)
 {
 	// 依次读入一个关键字为key的结点，将此结点插入二叉排序树T中
+	int num;
+	int index = 0;
 	T = NULL; // 将二叉排序树T初始化为空树
 	ElemType e;
 	cout << "请依次输入" << N << "个1-100的整数，组成数组以生成排序树\n";
-	for (int i = 0; i < N; i++)
+	while (index != N)
 	{
-		cin >> e.key;
-		InsertBST(T, e);
+		cin >> num;
+		if (num > 100 || num < 1)
+		{
+			cout << "数字" << num << "不在要求值域中，请重新输入符合规范的值!" << endl;
+			if (index != 0)
+			{
+				index--; // 不符合值域回退索引
+			}
+		}
+		else
+		{
+			e.key = num;
+			InsertBST(T, e);
+			index++;
+		}
 	}
 }
 
